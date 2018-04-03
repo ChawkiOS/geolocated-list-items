@@ -8,6 +8,8 @@
 
 <ion-content>
   
+  <div #map id="map"></div>
+  
   <ion-slides spaceBetween="-20" #slider (ionSlideWillChange)="onSlideChanged()">
     <ion-slide *ngFor="let item of countries">
       <ion-card>

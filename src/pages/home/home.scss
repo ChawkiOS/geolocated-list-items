@@ -7,9 +7,23 @@ page-home {
             height: 130px;
         }
     }
-
     .content-ios {
         color: #000;
         background-color: #f8f8f8;
+    }
+    #map {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    .gm-style-mtc {
+        display: none;
+    }
+    .gm-bundled-control-on-bottom {
+        display: none;
+    }
+
+    .swiper-slide {
+        height: 165%;
     }
 }
