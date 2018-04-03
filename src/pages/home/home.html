@@ -1,24 +1,31 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Countries
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
   
-  <ion-slides>
-    <ion-slide *ngFor="let item of countries; let idx = index">
+  <ion-slides spaceBetween="-20" #slider (ionSlideWillChange)="onSlideChanged()">
+    <ion-slide *ngFor="let item of countries">
       <ion-card>
-        <img [src]="item.flag" />
         <ion-card-content>
           <ion-card-title>
              {{item.name}}
           </ion-card-title>
+          <ion-chip *ngIf="item.region">
+            <ion-label>{{ item.region }}</ion-label>
+          </ion-chip>
+          <ion-chip *ngIf="item.alpha2Code">
+            <ion-label>{{ item.alpha2Code }}</ion-label>
+          </ion-chip>
+          <ion-chip *ngIf="item.callingCodes[0]">
+            <ion-label>{{ item.callingCodes[0] }}</ion-label>
+          </ion-chip>
         </ion-card-content>
       </ion-card>
-
     </ion-slide>
   </ion-slides>
 

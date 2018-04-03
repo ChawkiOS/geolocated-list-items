@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { NavController, Slides } from 'ionic-angular';
 import { DataProvider } from '../../providers/data/data';
 
 @Component({
@@ -8,7 +8,10 @@ import { DataProvider } from '../../providers/data/data';
 })
 export class HomePage {
 
-  countries: any;
+  @ViewChild('slider') slider: Slides;
+
+  countries: any = [];
+  currentIndex = 0;
 
   constructor(public navCtrl: NavController,
     public dataProvider: DataProvider) {
@@ -19,8 +22,12 @@ export class HomePage {
     this.dataProvider.getCountries()
       .then(data => {
         this.countries = data;
-        console.log(this.countries);
       });
+  }
+
+  onSlideChanged() {
+    this.currentIndex = this.slider.getActiveIndex();
+    console.log('Slide changed! Current index is', this.currentIndex);
   }
 
 }

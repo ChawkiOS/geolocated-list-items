@@ -1,7 +1,15 @@
 page-home {
+    .card {
+        height: 110px;
+    }
     .swiper-slide-active {
         .card {
-            padding: 30px;
+            height: 130px;
         }
+    }
+
+    .content-ios {
+        color: #000;
+        background-color: #f8f8f8;
     }
 }
