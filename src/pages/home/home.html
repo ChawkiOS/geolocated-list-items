@@ -7,8 +7,19 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  
+  <ion-slides>
+    <ion-slide *ngFor="let item of countries; let idx = index">
+      <ion-card>
+        <img [src]="item.flag" />
+        <ion-card-content>
+          <ion-card-title>
+             {{item.name}}
+          </ion-card-title>
+        </ion-card-content>
+      </ion-card>
+
+    </ion-slide>
+  </ion-slides>
+
 </ion-content>
